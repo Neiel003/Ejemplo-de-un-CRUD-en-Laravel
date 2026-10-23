@@ -376,9 +376,8 @@ Para evitar perder datos, primero se debe revisar el esquema y preparar una migr
 
 - **Universidad:** Universidad Tecnológica de Panamá
 - **Facultad:** Facultad de Ingeniería de Sistemas Computacionales
-- **Nombre:** [Escribe aquí tu nombre]
-- **Correo:** [Escribe aquí tu correo institucional]
-- **Curso:** [Escribe aquí el nombre del curso]
+- **Nombre:** Vasti Neiel Legaspi
+- **Curso:** Desarrollo WEB
 - **Docente:** Ing. Irina Fong
 
 ---

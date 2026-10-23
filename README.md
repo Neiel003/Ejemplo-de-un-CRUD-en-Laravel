@@ -35,7 +35,7 @@ En este laboratorio seguí la guía **“Acercamiento a un CRUD rápido en Larav
 
 Trabajé desde PowerShell en Windows, con WampServer, dentro de la carpeta `C:\wamp64\www`. El proyecto se llama `crud_rapido` y utiliza una base de datos MySQL con el mismo nombre. Durante el proceso se revisaron la configuración del entorno, las migraciones, el modelo `Product`, el controlador `ProductController`, las rutas y las vistas Blade.
 
-Las capturas se insertan junto a los pasos que ilustran. Para que aparezcan correctamente en GitHub, guarda las imágenes en una carpeta llamada `Imagenes` y utiliza los nombres `IMG1.png`, `IMG2.png`, etc. Si alguna captura de tu carpeta corresponde a otro paso, cambia únicamente el nombre de la imagen en la línea correspondiente.
+Las capturas se insertan junto a los pasos que ilustran y se enlazan directamente desde la carpeta [Imagenes del repositorio de referencia](https://github.com/Neiel003/Ejemplo-de-un-CRUD-en-Laravel/tree/main/Imagenes). Los archivos siguen el formato `Img1.png`, `Img2.png`, etc.
 
 ## ⚙️ Requisitos y herramientas
 
@@ -59,7 +59,7 @@ cd C:\wamp64\www
 
 En este paso solo entré a `www`; todavía no estaba dentro de `crud_rapido`. Desde esta ubicación seguí la guía para crear el proyecto.
 
-![IMG1: PowerShell ubicado en la carpeta www](Imagenes/IMG1.png)
+![IMG1: PowerShell ubicado en la carpeta www](https://raw.githubusercontent.com/Neiel003/Ejemplo-de-un-CRUD-en-Laravel/main/Imagenes/Img1.png)
 
 ### 2. Crear el proyecto Laravel
 
@@ -73,7 +73,7 @@ El instalador de Laravel prepara la carpeta `crud_rapido` y crea la estructura i
 
 Si el proyecto ya está creado en el equipo, no hay que volver a ejecutar este comando sobre la misma carpeta. En ese caso se continúa con el proyecto existente.
 
-![IMG2: Creación del proyecto crud_rapido](Imagenes/IMG2.png)
+![IMG2: Creación del proyecto crud_rapido](https://raw.githubusercontent.com/Neiel003/Ejemplo-de-un-CRUD-en-Laravel/main/Imagenes/Img2.png)
 
 ### 3. Entrar en la carpeta del proyecto
 
@@ -85,7 +85,7 @@ cd C:\wamp64\www\crud_rapido
 
 Desde aquí ejecuté los comandos de Artisan y trabajé con los archivos del sistema. En la raíz del proyecto se encuentra `artisan`, y las carpetas principales incluyen `app`, `database`, `resources` y `routes`.
 
-![IMG3: Carpeta y estructura inicial del proyecto](Imagenes/IMG3.png)
+![IMG3: Carpeta y estructura inicial del proyecto](https://raw.githubusercontent.com/Neiel003/Ejemplo-de-un-CRUD-en-Laravel/main/Imagenes/Img3.png)
 
 ### 4. Revisar el archivo `.env`
 
@@ -93,7 +93,7 @@ Antes de ejecutar las migraciones, revisé el archivo `.env`, tal como indica la
 
 La base de datos utilizada en este proyecto se llama `crud_rapido`. Los valores de `DB_DATABASE`, `DB_USERNAME` y `DB_PASSWORD` deben corresponder a la configuración local de MySQL. No es recomendable subir contraseñas reales al repositorio.
 
-![IMG4: Configuración del archivo .env](Imagenes/IMG4.png)
+![IMG4: Configuración del archivo .env](https://raw.githubusercontent.com/Neiel003/Ejemplo-de-un-CRUD-en-Laravel/main/Imagenes/Img4.png)
 
 ### 5. Atender el ajuste de longitud de cadenas, si es necesario
 
@@ -108,7 +108,7 @@ Schema::defaultStringLength(191);
 
 Este ajuste se aplica cuando el entorno lo requiere, no como una instrucción para duplicar la línea. Si el proyecto no presenta ese error, no es necesario agregarlo solo por agregarlo. Después de modificar un archivo PHP, guardé los cambios antes de continuar.
 
-![IMG5: Ajuste de Schema en AppServiceProvider, si se utilizó](Imagenes/IMG5.png)
+![IMG5: Ajuste de Schema en AppServiceProvider, si se utilizó](https://raw.githubusercontent.com/Neiel003/Ejemplo-de-un-CRUD-en-Laravel/main/Imagenes/Img5.png)
 
 ### 6. Preparar la base de datos y ejecutar las migraciones
 
@@ -130,7 +130,7 @@ php artisan migrate:status
 
 La guía también explica dos comandos que conviene distinguir: `php artisan migrate:fresh` elimina las tablas existentes y las crea de nuevo ejecutando todas las migraciones; `php artisan migrate:rollback` revierte el último lote de migraciones. No se debe usar `migrate:fresh` en una base de datos con información que se quiera conservar.
 
-![IMG6: Ejecución o revisión de las migraciones](Imagenes/IMG6.png)
+![IMG6: Ejecución o revisión de las migraciones](https://raw.githubusercontent.com/Neiel003/Ejemplo-de-un-CRUD-en-Laravel/main/Imagenes/Img6.png)
 
 ### 7. Crear el modelo `Product` y su migración
 
@@ -142,7 +142,7 @@ php artisan make:model Product -m
 
 El modelo se ubica normalmente en `app/Models/Product.php`, y la migración correspondiente se crea dentro de `database/migrations`. El modelo representa los productos en Laravel y permite acceder a sus registros mediante Eloquent.
 
-![IMG7: Modelo Product y migración generada](Imagenes/IMG7.png)
+![IMG7: Modelo Product y migración generada](https://raw.githubusercontent.com/Neiel003/Ejemplo-de-un-CRUD-en-Laravel/main/Imagenes/Img7.png)
 
 ### 8. Definir las columnas de la tabla de productos
 
@@ -167,7 +167,7 @@ Después de guardar la migración, se aplica con:
 php artisan migrate
 ```
 
-![IMG8: Columnas definidas para la tabla de productos](Imagenes/IMG8.png)
+![IMG8: Columnas definidas para la tabla de productos](https://raw.githubusercontent.com/Neiel003/Ejemplo-de-un-CRUD-en-Laravel/main/Imagenes/Img8.png)
 
 ### 9. Generar los archivos del CRUD con el paquete indicado en la guía
 
@@ -179,7 +179,7 @@ composer require ibex/crud-generator --dev
 
 Este tipo de generador puede crear archivos como controladores, vistas, modelos, solicitudes, migraciones o rutas, dependiendo de la configuración del paquete y de la versión instalada. Si el proyecto ya tiene esos archivos creados, no hay que volver a generarlos sin revisar primero el contenido existente, porque se podrían sobrescribir cambios.
 
-![IMG9: Instalación o revisión del generador CRUD](Imagenes/IMG9.png)
+![IMG9: Instalación o revisión del generador CRUD](https://raw.githubusercontent.com/Neiel003/Ejemplo-de-un-CRUD-en-Laravel/main/Imagenes/Img9.png)
 
 ### 10. Publicar los archivos del paquete
 
@@ -191,7 +191,7 @@ php artisan vendor:publish --tag=crud
 
 La publicación copia al proyecto los recursos que el paquete exponga para esa etiqueta. Si Artisan no encuentra recursos con ese tag, se debe revisar que el paquete se haya instalado correctamente y que la versión utilizada registre esa etiqueta.
 
-![IMG10: Publicación de recursos del generador](Imagenes/IMG10.png)
+![IMG10: Publicación de recursos del generador](https://raw.githubusercontent.com/Neiel003/Ejemplo-de-un-CRUD-en-Laravel/main/Imagenes/Img10.png)
 
 ### 11. Ejecutar el generador para `products`
 
@@ -203,7 +203,7 @@ php artisan make:crud products
 
 El argumento `products` identifica el recurso para el que se quiere generar el CRUD. Después de ejecutar el comando, revisé los archivos creados y las rutas que se incorporaron. La generación automática facilita el inicio, pero de todas formas es necesario revisar el código generado y adaptarlo a los nombres de campos y a las necesidades reales del proyecto.
 
-![IMG11: Ejecución del generador para products](Imagenes/IMG11.png)
+![IMG11: Ejecución del generador para products](https://raw.githubusercontent.com/Neiel003/Ejemplo-de-un-CRUD-en-Laravel/main/Imagenes/Img11.png)
 
 ### 12. Revisar las rutas del recurso
 
@@ -223,7 +223,7 @@ Para comprobar las rutas se puede ejecutar:
 php artisan route:list --path=products
 ```
 
-![IMG12: Rutas del recurso products en web.php o route:list](Imagenes/IMG12.png)
+![IMG12: Rutas del recurso products en web.php o route:list](https://raw.githubusercontent.com/Neiel003/Ejemplo-de-un-CRUD-en-Laravel/main/Imagenes/Img12.png)
 
 ## 🏗️ Cómo se organiza el CRUD (MVC)
 
@@ -259,31 +259,31 @@ Las reglas de validación deben corresponder con los campos que envía el formul
 
 En el formulario de creación se introducen el nombre, la descripción, el precio y el stock. Al enviar los datos, el controlador los recibe, aplica las validaciones correspondientes y utiliza el modelo para guardarlos en la base de datos.
 
-![IMG13: Formulario de creación de producto](Imagenes/IMG13.png)
+![IMG13: Formulario de creación de producto](https://raw.githubusercontent.com/Neiel003/Ejemplo-de-un-CRUD-en-Laravel/main/Imagenes/Img13.png)
 
 ### 2. Consultar el listado
 
 La vista `index.blade.php` muestra los productos registrados en una tabla. Desde el listado se pueden revisar los datos y acceder a las opciones para consultar, editar o eliminar un producto.
 
-![IMG14: Listado de productos](Imagenes/IMG14.png)
+![IMG14: Listado de productos](https://raw.githubusercontent.com/Neiel003/Ejemplo-de-un-CRUD-en-Laravel/main/Imagenes/Img14.png)
 
 ### 3. Consultar los detalles
 
 La opción de consulta abre la vista `show.blade.php`, donde se presentan los datos del producto seleccionado sin tener que modificarlos.
 
-![IMG15: Detalles de un producto](Imagenes/IMG15.png)
+![IMG15: Detalles de un producto](https://raw.githubusercontent.com/Neiel003/Ejemplo-de-un-CRUD-en-Laravel/main/Imagenes/Img15.png)
 
 ### 4. Editar un producto
 
 La opción de edición abre el formulario con los datos actuales del producto. Al guardar los cambios, Laravel procesa la solicitud mediante el método `update` del controlador. Es importante que los campos enviados coincidan con las reglas de validación y con las columnas de la tabla.
 
-![IMG16: Formulario de edición](Imagenes/IMG16.png)
+![IMG16: Formulario de edición](https://raw.githubusercontent.com/Neiel003/Ejemplo-de-un-CRUD-en-Laravel/main/Imagenes/Img16.png)
 
 ### 5. Eliminar un producto
 
 La opción de eliminación utiliza el método `destroy` del controlador para borrar el registro seleccionado. Como esta acción modifica los datos almacenados, hay que comprobar que se seleccionó el producto correcto antes de confirmar la operación.
 
-![IMG17: Acción o resultado de eliminar un producto](Imagenes/IMG17.png)
+![IMG17: Acción o resultado de eliminar un producto](https://raw.githubusercontent.com/Neiel003/Ejemplo-de-un-CRUD-en-Laravel/main/Imagenes/Img17.png)
 
 ## ▶️ Levantar el sistema
 
@@ -295,7 +295,7 @@ php artisan serve
 
 La terminal muestra una dirección local; al abrirla en el navegador se puede probar la aplicación. La guía también menciona `composer run dev` para los proyectos que tienen configurado ese script en Composer. En este proyecto se puede utilizar el comando que corresponda a la configuración existente.
 
-![IMG18: Aplicación en ejecución](Imagenes/IMG18.png)
+![IMG18: Aplicación en ejecución](https://raw.githubusercontent.com/Neiel003/Ejemplo-de-un-CRUD-en-Laravel/main/Imagenes/Img18.png)
 
 ## 🗄️ Base de datos y mantenimiento
 
@@ -306,6 +306,8 @@ La base de datos utilizada para el proyecto se llama `crud_rapido`. La tabla `pr
 - Que las validaciones acepten los valores recibidos.
 - Que `$fillable` permita asignar los campos requeridos.
 - Que los métodos `store` y `update` guarden los valores correctos.
+
+![IMG19: Revisión de la estructura o los datos de la base de datos](https://raw.githubusercontent.com/Neiel003/Ejemplo-de-un-CRUD-en-Laravel/main/Imagenes/Img19.png)
 
 Para revisar las migraciones:
 
@@ -344,6 +346,8 @@ Como respaldo, se recomienda exportar la base de datos desde phpMyAdmin en forma
 
 La guía también incluye `laravel/ui` y comandos de Bootstrap/autenticación. Esos pasos solo deben describirse como ejecutados si efectivamente se realizaron en este proyecto; no se presentan aquí como una instalación confirmada porque la configuración existente puede variar.
 
+![IMG20: Comprobación de comandos y configuración del proyecto](https://raw.githubusercontent.com/Neiel003/Ejemplo-de-un-CRUD-en-Laravel/main/Imagenes/Img20.png)
+
 ## ⚠️ Dificultades y comprobaciones
 
 Durante el desarrollo fue importante verificar que la estructura de la tabla coincidiera con los campos usados en la interfaz. Una migración que solo cree el identificador y las fechas no basta si el formulario necesita guardar nombre, descripción, precio y stock.
@@ -357,6 +361,8 @@ Si los datos no se guardan o se muestran de forma incompleta, revisaría en este
 5. Los métodos `store` y `update` de `ProductController`.
 
 Para evitar perder datos, primero se debe revisar el esquema y preparar una migración correctiva. `migrate:fresh` no es una solución segura si hay registros que se deben conservar, ya que elimina las tablas existentes.
+
+![IMG21: Resultado final o evidencia complementaria del laboratorio](https://raw.githubusercontent.com/Neiel003/Ejemplo-de-un-CRUD-en-Laravel/main/Imagenes/Img21.png)
 
 ## 📚 Referencias
 

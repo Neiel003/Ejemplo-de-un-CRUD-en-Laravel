@@ -35,7 +35,6 @@ En este laboratorio seguí la guía **“Acercamiento a un CRUD rápido en Larav
 
 Trabajé desde PowerShell en Windows, con WampServer, dentro de la carpeta `C:\wamp64\www`. El proyecto se llama `crud_rapido` y utiliza una base de datos MySQL con el mismo nombre. Durante el proceso se revisaron la configuración del entorno, las migraciones, el modelo `Product`, el controlador `ProductController`, las rutas y las vistas Blade.
 
-Las capturas se insertan junto a los pasos que ilustran y se enlazan directamente desde la carpeta [Imagenes del repositorio de referencia](https://github.com/Neiel003/Ejemplo-de-un-CRUD-en-Laravel/tree/main/Imagenes). Los archivos siguen el formato `Img1.png`, `Img2.png`, etc.
 
 ## ⚙️ Requisitos y herramientas
 
@@ -107,8 +106,6 @@ Schema::defaultStringLength(191);
 ```
 
 Este ajuste se aplica cuando el entorno lo requiere, no como una instrucción para duplicar la línea. Si el proyecto no presenta ese error, no es necesario agregarlo solo por agregarlo. Después de modificar un archivo PHP, guardé los cambios antes de continuar.
-
-![IMG5: Ajuste de Schema en AppServiceProvider, si se utilizó](https://raw.githubusercontent.com/Neiel003/Ejemplo-de-un-CRUD-en-Laravel/main/Imagenes/Img5.png)
 
 ### 6. Preparar la base de datos y ejecutar las migraciones
 
